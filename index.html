@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#596247">
+  <title>Cristi & Alina | 21 August 2027</title>
+  <style>
+    :root{--olive:#596247;--deep:#303826;--cream:#f6f2e8;--paper:#fffdf8;--gold:#b5a06a}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--deep);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+    .hero{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;background:
+      linear-gradient(rgba(35,42,28,.34),rgba(35,42,28,.58)),url('photo.jpg') center 58%/cover no-repeat;color:white;padding:28px}
+    .hero-content{max-width:760px;text-shadow:0 2px 18px rgba(0,0,0,.38);animation:fade 1.3s ease both}
+    .eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:.75rem;margin-bottom:18px}
+    h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(3.2rem,10vw,7.2rem);line-height:1;margin:0 0 20px}
+    .date{font-size:clamp(1rem,2.7vw,1.4rem);letter-spacing:.18em;text-transform:uppercase}
+    .cta{display:inline-block;margin-top:36px;padding:13px 24px;border:1px solid rgba(255,255,255,.8);border-radius:999px;color:white;text-decoration:none;background:rgba(255,255,255,.08);backdrop-filter:blur(5px);transition:.25s}
+    .cta:hover{background:white;color:var(--deep);transform:translateY(-2px)}
+    section{padding:88px 20px}
+    .wrap{width:min(980px,100%);margin:auto;text-align:center}
+    h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(2.1rem,5vw,3.4rem);margin:0 0 14px}
+    .leaf{color:var(--gold);font-size:1.3rem;margin:7px 0 30px}
+    .invitation{background:var(--paper)}
+    .invitation img{display:block;width:min(640px,100%);height:auto;margin:35px auto 0;border-radius:4px;box-shadow:0 22px 55px rgba(48,56,38,.17)}
+    .location{background:var(--olive);color:white}
+    .location p{font-size:1.08rem;margin:6px 0}
+    .map-btn{display:inline-block;margin-top:25px;background:var(--paper);color:var(--deep);padding:13px 24px;border-radius:999px;text-decoration:none;font-weight:700}
+    .countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:650px;margin:35px auto 0}
+    .unit{background:var(--paper);padding:24px 8px;border:1px solid rgba(89,98,71,.14)}
+    .number{display:block;font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,6vw,3.5rem);color:var(--olive)}
+    .label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+    footer{text-align:center;padding:35px 20px;background:var(--deep);color:#f6f2e8;font-family:Georgia,'Times New Roman',serif}
+    @keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @media(max-width:560px){.hero{background-position:center 58%}.countdown-grid{grid-template-columns:repeat(2,1fr)}section{padding:68px 18px}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Ne căsătorim</div>
+      <h1>Cristi &amp; Alina</h1>
+      <div class="date">21 August 2027</div>
+      <a class="cta" href="#invitatie">Descoperă invitația</a>
+    </div>
+  </header>
+
+  <section id="invitatie" class="invitation">
+    <div class="wrap">
+      <h2>Invitația noastră</h2>
+      <div class="leaf">❦</div>
+      <p>Cu drag, vă invităm să ne fiți alături în această zi specială.</p>
+      <img src="invitation.png" alt="Invitația de nuntă Cristi și Alina">
+    </div>
+  </section>
+
+  <section class="location">
+    <div class="wrap">
+      <h2>Locația</h2>
+      <div class="leaf">❦</div>
+      <p><strong>Raymond Park, Sala Blanc</strong></p>
+      <p>Str. Sucevița 34, Chișinău</p>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Raymond+Park+Sala+Blanc+Strada+Sucevita+34+Chisinau" target="_blank" rel="noopener">Deschide în Google Maps</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Până când vom spune DA</h2>
+      <div class="leaf">❦</div>
+      <div class="countdown-grid" aria-label="Numărătoare inversă">
+        <div class="unit"><span class="number" id="days">0</span><span class="label">Zile</span></div>
+        <div class="unit"><span class="number" id="hours">0</span><span class="label">Ore</span></div>
+        <div class="unit"><span class="number" id="minutes">0</span><span class="label">Minute</span></div>
+        <div class="unit"><span class="number" id="seconds">0</span><span class="label">Secunde</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>Cristi &amp; Alina · 21.08.2027</footer>
+  <script>
+    const wedding = new Date('2027-08-21T17:00:00+03:00').getTime();
+    function update(){
+      const diff=Math.max(0,wedding-Date.now());
+      document.getElementById('days').textContent=Math.floor(diff/86400000);
+      document.getElementById('hours').textContent=Math.floor(diff/3600000)%24;
+      document.getElementById('minutes').textContent=Math.floor(diff/60000)%60;
+      document.getElementById('seconds').textContent=Math.floor(diff/1000)%60;
+    }
+    update(); setInterval(update,1000);
+  </script>
+</body>
+</html>

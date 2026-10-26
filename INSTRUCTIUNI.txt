@@ -1,0 +1,9 @@
+SITE NUNTA - CRISTI & ALINA
+
+1. Pastreaza index.html in acest folder.
+2. Salveaza fotografia principala cu numele exact: photo.jpg
+3. Exporta invitatia din Canva ca PNG si salveaz-o cu numele exact: invitation.png
+4. Deschide index.html cu dublu click pentru previzualizare.
+5. Pentru publicare gratuita, incarca toate cele 3 fisiere in acelasi repository GitHub si activeaza GitHub Pages.
+
+Important: ora numaratorii inverse este setata temporar la 00:00, 21 august 2027. Poate fi schimbata in index.html dupa ce ora evenimentului este cunoscuta.
